@@ -2,9 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'bloc/view.dart';
 import 'core/shortcuts/move_to.dart';
+import 'hagz/choice_page.dart';
 import 'hagz/football_way.dart';
 
 void main() {
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: LoginView(),
+      home: ChoicePage(),
     );
   }
 }
