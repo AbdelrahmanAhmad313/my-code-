@@ -8,12 +8,14 @@ class appInput extends StatefulWidget {
   final BorderRadius borderradius;
   final Key? key;
   final bool isPassword;
+  final TextDirection textDirection;
   const appInput({
     this.keyboardtype = TextInputType.name,
     this.borderradius= const BorderRadius.all(Radius.circular(0)),
     this.key,
     this.label,
      this.isPassword=false,
+    this.textDirection=TextDirection.ltr,
   }) :super(key: key);
 
   @override
@@ -24,22 +26,25 @@ class _appInputState extends State<appInput> {
   bool isHidden =true;
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      key: widget.key,
-      obscureText: isHidden&&widget.isPassword,
-      keyboardType:widget.keyboardtype,
-      decoration: InputDecoration(
-        labelText: widget.label,
-        focusedBorder:OutlineInputBorder(
-          borderRadius: widget.borderradius,
+    return Directionality(
+      textDirection: widget.textDirection,
+      child: TextFormField(
+        key: widget.key,
+        obscureText: isHidden&&widget.isPassword,
+        keyboardType:widget.keyboardtype,
+        decoration: InputDecoration(
+          labelText: widget.label,
+          focusedBorder:OutlineInputBorder(
+            borderRadius: widget.borderradius,
+          ),
+          suffixIcon: widget.isPassword?IconButton(
+            icon:Icon(isHidden?Icons.visibility_off:Icons.visibility),
+            onPressed: (){
+              isHidden=!isHidden;
+              setState(() {});
+            },
+          ):null
         ),
-        suffixIcon: widget.isPassword?IconButton(
-          icon:Icon(isHidden?Icons.visibility_off:Icons.visibility),
-          onPressed: (){
-            isHidden=!isHidden;
-            setState(() {});
-          },
-        ):null
       ),
     );
   }

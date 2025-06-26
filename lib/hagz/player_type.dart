@@ -12,6 +12,9 @@ class PlayerType extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:isPadel?Colors.blue: Colors.green,
+      appBar: AppBar(
+        backgroundColor: isPadel?Colors.blue:Colors.green,
+      ),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

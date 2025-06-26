@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/core/shortcuts/move_to.dart';
 
 import 'football/football_way.dart';
+import 'paddle/paddle_way.dart';
 import 'player_type.dart';
 
 class ChoicePage extends StatelessWidget {
@@ -25,6 +26,7 @@ class ChoicePage extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
+                  isPadel=false;
                   moveTo(PlayerType());
                 },
                 child: Container(
@@ -60,36 +62,42 @@ class ChoicePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: 150,
-                width: 150,
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Padel",
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.w400),
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Image.asset(
-                          'assets/images/padel.jpg',
-                          alignment: Alignment.bottomLeft,
+              GestureDetector(
+                onTap: (){
+                  isPadel=true;
+                  moveTo(PlayerType());
+                },
+                child: Container(
+                  height: 150,
+                  width: 150,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Padel",
+                          style: TextStyle(
+                              fontSize: 25, fontWeight: FontWeight.w400),
                         ),
-                      ),
-                    ]),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                        blurRadius: 7,
-                        blurStyle: BlurStyle.normal,
-                        color: Colors.grey,
-                        offset: const Offset(-5.0, 5.0),
-                        spreadRadius: 2.0),
-                  ],
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            'assets/images/padel.jpg',
+                            alignment: Alignment.bottomLeft,
+                          ),
+                        ),
+                      ]),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 7,
+                          blurStyle: BlurStyle.normal,
+                          color: Colors.grey,
+                          offset: const Offset(-5.0, 5.0),
+                          spreadRadius: 2.0),
+                    ],
+                  ),
                 ),
               ),
             ],
