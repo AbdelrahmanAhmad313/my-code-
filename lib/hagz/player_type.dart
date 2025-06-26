@@ -18,8 +18,7 @@ class PlayerType extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: (){
-                isPadel=true;
-                moveTo(FootballWay());
+                moveTo(isPadel?PaddleWay():FootballWay());
               },
               child: Container(
                 height: 150,
