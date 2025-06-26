@@ -29,12 +29,18 @@ class _appInputState extends State<appInput> {
     return Directionality(
       textDirection: widget.textDirection,
       child: TextFormField(
+        onTapOutside:(event) {
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
         key: widget.key,
         obscureText: isHidden&&widget.isPassword,
         keyboardType:widget.keyboardtype,
         decoration: InputDecoration(
           labelText: widget.label,
           focusedBorder:OutlineInputBorder(
+            borderRadius: widget.borderradius,
+          ),
+          enabledBorder: OutlineInputBorder(
             borderRadius: widget.borderradius,
           ),
           suffixIcon: widget.isPassword?IconButton(

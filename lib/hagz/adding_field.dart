@@ -12,6 +12,8 @@ class AddingField extends StatelessWidget {
       ),
       body: appInput(
         label: "العدد المطلوب",
+        textDirection: TextDirection.rtl,
+        borderradius: BorderRadius.circular(15),
       ),
     );
   }
