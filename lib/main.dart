@@ -1,7 +1,9 @@
+
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'core/shortcuts/move_to.dart';
-import 'hagz/choice_page.dart';
-import 'hagz/field_details.dart';
 import 'hagz/football_way.dart';
 
 void main() {
