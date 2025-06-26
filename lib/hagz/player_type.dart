@@ -26,8 +26,20 @@ class PlayerType extends StatelessWidget {
                       spreadRadius: 2.0),
                 ],
               ),
-              child: Center(
-                child: Text("عايز ألعب"),
+              child:Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("عايز ألعب",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w500),),
+                    ClipRRect(
+                      borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+                      child: appImages(
+                        path: "football-soccer.jpg",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(width: 50),
@@ -46,17 +58,21 @@ class PlayerType extends StatelessWidget {
                       spreadRadius: 2.0),
                 ],
               ),
-              child: Stack(
-                children: [
-                  Center(
-                    child: appImages(
-                      path: "football-ball.svg",
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("معايا ملعب",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w500),),
+                    ClipRRect(
+                      borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+                      child: appImages(
+                        path: "football-soccer.jpg",
+                        fit: BoxFit.contain,
+                      ),
                     ),
-                  ),
-                  Center(
-                    child: Text("معايا ملعب"),
-                  ),
-                ],
+
+                  ],
+                ),
               ),
             ),
           ],
