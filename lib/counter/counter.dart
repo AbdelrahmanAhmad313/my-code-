@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/controllers/cubit/counter_cubit.dart';
 
-class CounterScreen extends StatefulWidget {
-  @override
-  State<CounterScreen> createState() => _CounterScreenState();
-}
-
-class _CounterScreenState extends State<CounterScreen> {
-  int _counter = 0;
-
+class CounterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +15,7 @@ class _CounterScreenState extends State<CounterScreen> {
           ),
           body: Center(
             child: Text(
-              '$_counter',
+              state.count.toString(),
               style: TextStyle(fontSize: 48),
             ),
           ),
@@ -31,9 +24,8 @@ class _CounterScreenState extends State<CounterScreen> {
             children: [
               FloatingActionButton(
                 onPressed: () {
-                  setState(() {
-                    _counter--;
-                  });
+                  context.read<CounterCubit>().dec();
+
                 },
                 tooltip: 'Decrement',
                 child: Icon(Icons.remove),
@@ -41,9 +33,7 @@ class _CounterScreenState extends State<CounterScreen> {
               SizedBox(width: 16),
               FloatingActionButton(
                 onPressed: () {
-                  setState(() {
-                    _counter++;
-                  });
+                  context.read<CounterCubit>().inc();
                 },
                 tooltip: 'Increment',
                 child: Icon(Icons.add),
