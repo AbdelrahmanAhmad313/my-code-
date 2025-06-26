@@ -8,43 +8,45 @@ import 'field_details.dart';
 
 class FootballWay extends StatefulWidget {
   const FootballWay({super.key});
-
   @override
   State<FootballWay> createState() => _FootballWayState();
+
 }
 
-class _FootballWayState extends State<FootballWay> {
-  List<Map> data=[{
-    "pageNo":1,
-    "loc":"مقطم",
-    "time":4,
-    "pl":3
+late int pagenum;
+List<Map> data=[{
+  "pageNo":1,
+  "loc":"مقطم",
+  "time":4,
+  "pl":3
+},
+  {
+    "pageNo":2,
+    "loc":"هرم",
+    "time":2,
+    "pl":4
   },
-    {
-      "pageNo":2,
-      "loc":"هرم",
-      "time":2,
-      "pl":4
-    },
-    {
-      "pageNo":3,
-      "loc":"تجمع الخامس",
-      "time":1,
-      "pl":1
-    },
-    {
-      "pageNo":4,
-      "loc":"مدينه نصر",
-      "time":3,
-      "pl":8
-    },
-    {
-      "pageNo":5,
-      "loc":"معادي",
-      "time":1,
-      "pl":9
-    },
-  ];
+  {
+    "pageNo":3,
+    "loc":"تجمع الخامس",
+    "time":1,
+    "pl":1
+  },
+  {
+    "pageNo":4,
+    "loc":"مدينه نصر",
+    "time":3,
+    "pl":8
+  },
+  {
+    "pageNo":5,
+    "loc":"معادي",
+    "time":1,
+    "pl":9
+  },
+];
+class _FootballWayState extends State<FootballWay> {
+
   @override
 
   Widget build(BuildContext context) {
@@ -60,6 +62,7 @@ class _FootballWayState extends State<FootballWay> {
       body: ListView.builder(
         itemBuilder: (context,index)=>GestureDetector(
           onTap: (){
+            pagenum=index;
             moveTo(DetailsPage());
           },
           child: Container(

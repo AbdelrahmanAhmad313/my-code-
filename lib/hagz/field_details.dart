@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myapp/core/shortcuts/Images.dart';
 import 'package:myapp/core/shortcuts/app_button.dart';
 
+import 'football_way.dart';
+
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
 
@@ -10,9 +12,6 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  List plList=[12,4,1,8,9];
-  List locList=["مقطم","هرم","تجمع الخامس","مدينه نصر","معادي"];
-  List timeList=[4,2,1,3,1];
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +41,9 @@ class _DetailsPageState extends State<DetailsPage> {
             mainAxisAlignment:MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text("عدد الساعات:${timeList[1]}"),
-              Text("عدد مطلوب: ${plList[1]}"),
-              Text("مكان:${locList[3]}"),
+              Text("عدد الساعات:${data[pagenum]["time"]}"),
+              Text("عدد مطلوب: ${data[pagenum]["pl"]}"),
+              Text("مكان:${data[pagenum]["loc"]}"),
             ],
           ),
         ],
