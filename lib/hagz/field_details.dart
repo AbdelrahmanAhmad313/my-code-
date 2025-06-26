@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hagz/core/shortcuts/Images.dart';
-import 'package:hagz/core/shortcuts/app_button.dart';
+import 'package:myapp/core/shortcuts/Images.dart';
+import 'package:myapp/core/shortcuts/app_button.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});

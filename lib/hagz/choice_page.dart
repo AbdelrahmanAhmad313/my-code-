@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hagz/core/shortcuts/move_to.dart';
+import 'package:myapp/core/shortcuts/move_to.dart';
 
 import 'football_way.dart';
 

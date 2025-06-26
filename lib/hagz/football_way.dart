@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:hagz/core/shortcuts/Images.dart';
-import 'package:hagz/core/shortcuts/move_to.dart';
+import 'package:myapp/core/shortcuts/Images.dart';
+import 'package:myapp/core/shortcuts/move_to.dart';
 
-import 'C:\/Users/pc/StudioProjects/myapp/lib/e5gez/field_details.dart';
+import 'field_details.dart';
 
 class FootballWay extends StatefulWidget {
   const FootballWay({super.key});
