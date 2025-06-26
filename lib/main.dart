@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'bloc/view.dart';
 import 'core/shortcuts/move_to.dart';
 import 'hagz/football_way.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: FootballWay(),
+      home: LoginView(),
     );
   }
 }
