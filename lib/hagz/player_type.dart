@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myapp/core/shortcuts/Images.dart';
 import 'package:myapp/core/shortcuts/move_to.dart';
 
-import 'football_way.dart';
+import 'football/football_way.dart';
+import 'paddle/paddle_way.dart';
 
 class PlayerType extends StatelessWidget {
   const PlayerType({super.key});
@@ -10,13 +11,14 @@ class PlayerType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor:isPadel?Colors.blue: Colors.green,
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
               onTap: (){
+                isPadel=true;
                 moveTo(FootballWay());
               },
               child: Container(
@@ -42,7 +44,7 @@ class PlayerType extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
                         child: appImages(
-                          path: "football-soccer.jpg",
+                          path:isPadel?"padel player.jpg":"football-soccer.jpg",
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -79,7 +81,7 @@ class PlayerType extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
                         child: appImages(
-                          path: "soccer field.jpg",
+                          path:isPadel?"padel field choice.jpg": "soccer field.jpg",
                           fit: BoxFit.contain,
                         ),
                       ),

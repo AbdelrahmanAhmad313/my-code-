@@ -7,7 +7,7 @@ import 'counter/counter.dart';
 import 'hagz/choice_page.dart';
 import 'hagz/football/football_way.dart';
 import 'hagz/paddle/paddle_way.dart';
-import 'hagz/football/player_type.dart';
+import 'hagz/player_type.dart';
 
 void main() {
   runApp(const MyApp());
