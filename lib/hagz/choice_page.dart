@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/core/shortcuts/move_to.dart';
 
-import 'football_way.dart';
-import 'player_type.dart';
+import 'football/football_way.dart';
+import 'football/player_type.dart';
 
 class ChoicePage extends StatelessWidget {
   const ChoicePage({super.key});
