@@ -52,6 +52,8 @@ class _DetailsPageState extends State<DetailsPage> {
       persistentFooterButtons: [
         appButton(onPressed: (){},
         text: "انا معاكوا",
+          fontSize: 25,
+          fontWeight: FontWeight.w600,
           borderRadius: BorderRadius.circular(10),
           width: 400,
           height: 75,
