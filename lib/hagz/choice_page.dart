@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/core/shortcuts/move_to.dart';
 
 import 'football_way.dart';
+import 'player_type.dart';
 
 class ChoicePage extends StatelessWidget {
   const ChoicePage({super.key});
@@ -22,7 +23,7 @@ class ChoicePage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap:() {
-                      moveTo(FootballWay());
+                      moveTo(PlayerType());
                     },
                     child: Container(
                       height: 150,
