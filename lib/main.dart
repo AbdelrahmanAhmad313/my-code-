@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home: PaddleWay(),
+        home: PlayerType(),
       ),
     );
   }

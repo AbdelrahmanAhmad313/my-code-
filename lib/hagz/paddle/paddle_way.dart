@@ -51,7 +51,7 @@ class PaddleWay extends StatelessWidget {
               children: [
                 ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: appImages(path: "football field.jpg")),
+                    child: appImages(path: "padel field.jpg")),
                 Column(
                   mainAxisAlignment:MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,

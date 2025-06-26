@@ -33,7 +33,7 @@ class _DetailsPageState extends State<DetailsPage> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: appImages(
-                path: "football field.jpg",
+                path: isPadel?"padel field.jpg":"football field.jpg",
                 width: 400,
                 fit: BoxFit.fill,
               ),
