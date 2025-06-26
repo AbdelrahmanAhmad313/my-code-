@@ -18,38 +18,33 @@ class _FootballWayState extends State<FootballWay> {
     "pageNo":1,
     "loc":"مقطم",
     "time":4,
-    "pl":12
+    "pl":3
   },
     {
       "pageNo":2,
       "loc":"هرم",
-      "time":4,
-      "pl":12
-    },
-    {
-      "pageNo":2,
-      "loc":"تجمع الخامس",
-      "time":4,
-      "pl":12
+      "time":2,
+      "pl":4
     },
     {
       "pageNo":3,
-      "loc":"مدينه نصر",
-      "time":4,
-      "pl":12
+      "loc":"تجمع الخامس",
+      "time":1,
+      "pl":1
     },
     {
       "pageNo":4,
-      "loc":"معادي",
-      "time":4,
-      "pl":12
+      "loc":"مدينه نصر",
+      "time":3,
+      "pl":8
     },
-
+    {
+      "pageNo":5,
+      "loc":"معادي",
+      "time":1,
+      "pl":9
+    },
   ];
-  List plList=[12,4,1,8,9];
-  List locList=["مقطم","هرم","تجمع الخامس","مدينه نصر","معادي"];
-  List timeList=[4,2,1,3,1];
-  List imgList=[];
   @override
 
   Widget build(BuildContext context) {
@@ -95,9 +90,9 @@ class _FootballWayState extends State<FootballWay> {
                   mainAxisAlignment:MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text("عدد الساعات:${timeList[index]}"),
-                    Text("عدد مطلوب: ${plList[index]}"),
-                    Text("مكان:${locList[index]}"),
+                    Text("عدد الساعات:${data[index]["time"]}"),
+                    Text("عدد مطلوب: ${data[index]["pl"]}"),
+                    Text("مكان:${data[index]["loc"]}"),
                   ],
                 ),
               ],
@@ -105,7 +100,6 @@ class _FootballWayState extends State<FootballWay> {
           ),
         ),
         itemCount: data.length,
-
       ),
     );
   }
