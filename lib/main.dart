@@ -6,6 +6,7 @@ import 'core/shortcuts/move_to.dart';
 import 'counter/counter.dart';
 import 'hagz/choice_page.dart';
 import 'hagz/football_way.dart';
+import 'hagz/player_type.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home: FootballWay(),
+        home: PlayerType(),
       ),
     );
   }
