@@ -6,26 +6,29 @@ class CounterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CounterCubit,CounterState>(
-      builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text('Simple Counter'),
-            backgroundColor: Colors.blue,
-          ),
-          body: Center(
-            child: Text(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Simple Counter'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: BlocBuilder<CounterCubit, CounterState>(
+          builder: (context, state) {
+            return Text(
               state.count.toString(),
               style: TextStyle(fontSize: 48),
-            ),
-          ),
-          floatingActionButton: Row(
+            );
+          },
+        ),
+      ),
+      floatingActionButton: BlocBuilder<CounterCubit, CounterState>(
+        builder: (context, state) {
+          return Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               FloatingActionButton(
                 onPressed: () {
                   context.read<CounterCubit>().dec();
-
                 },
                 tooltip: 'Decrement',
                 child: Icon(Icons.remove),
@@ -39,9 +42,9 @@ class CounterScreen extends StatelessWidget {
                 child: Icon(Icons.add),
               ),
             ],
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
