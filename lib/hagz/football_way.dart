@@ -14,6 +14,38 @@ class FootballWay extends StatefulWidget {
 }
 
 class _FootballWayState extends State<FootballWay> {
+  List<Map> data=[{
+    "pageNo":1,
+    "loc":"مقطم",
+    "time":4,
+    "pl":12
+  },
+    {
+      "pageNo":2,
+      "loc":"هرم",
+      "time":4,
+      "pl":12
+    },
+    {
+      "pageNo":2,
+      "loc":"تجمع الخامس",
+      "time":4,
+      "pl":12
+    },
+    {
+      "pageNo":3,
+      "loc":"مدينه نصر",
+      "time":4,
+      "pl":12
+    },
+    {
+      "pageNo":4,
+      "loc":"معادي",
+      "time":4,
+      "pl":12
+    },
+
+  ];
   List plList=[12,4,1,8,9];
   List locList=["مقطم","هرم","تجمع الخامس","مدينه نصر","معادي"];
   List timeList=[4,2,1,3,1];
@@ -72,7 +104,7 @@ class _FootballWayState extends State<FootballWay> {
             ),
           ),
         ),
-        itemCount: plList.length,
+        itemCount: data.length,
 
       ),
     );
