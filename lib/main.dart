@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:myapp/controllers/bloc/counter_bloc.dart';
 import 'package:myapp/controllers/cubit/counter_cubit.dart';
 import 'core/shortcuts/move_to.dart';
 import 'counter/counter.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => CounterCubit(),
+          create: (context) => CounterBloc(),
         ),
       ],
       child: MaterialApp(
