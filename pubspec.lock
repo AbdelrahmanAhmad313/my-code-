@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  basic_clocks:
+    dependency: "direct main"
+    description:
+      name: basic_clocks
+      sha256: "0aeb1016db78d6a40753b7c142348dbbb370e7d0d68f0e928dfe32f07b07f38c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   bloc:
     dependency: transitive
     description:

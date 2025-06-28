@@ -2,6 +2,7 @@
 
 import 'dart:ui';
 
+import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class appButton extends StatelessWidget {
   final String text;
   final double width,height,fontSize;
   final VoidCallback onPressed;
-  final Color color;
+  final Color color,textColor;
   final BorderRadius borderRadius;
   final FontWeight fontWeight;
   const appButton({super.key,
@@ -21,13 +22,14 @@ class appButton extends StatelessWidget {
     this.height=100,
     this.fontSize=14,
     this.fontWeight=FontWeight.w400,
+     this.textColor=Colors.black,
   });
 
   @override
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: onPressed,
-      child:Text(text,style: TextStyle(fontSize: fontSize,fontWeight:fontWeight ),) ,
+      child:Text(text,style: TextStyle(fontSize: fontSize,fontWeight:fontWeight,color: textColor ),) ,
       style: FilledButton.styleFrom(
         backgroundColor: color,
         minimumSize: Size(width, height),
