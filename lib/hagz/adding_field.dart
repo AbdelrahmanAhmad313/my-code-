@@ -1,5 +1,6 @@
 import 'package:basic_clocks/clocks.dart';
 import 'package:basic_clocks/data_models/clock_time.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/core/shortcuts/app_button.dart';
 import 'package:myapp/core/shortcuts/app_input.dart';
@@ -34,11 +35,6 @@ class _AddingFieldState extends State<AddingField> {
           SizedBox(
             height: 25,
           ),
-          appInput(
-            label: "عدد الساعات",
-            textDirection: TextDirection.rtl,
-            borderradius: BorderRadius.circular(25),
-          ),
           SizedBox(
             height: 25,
           ),
@@ -51,12 +47,13 @@ class _AddingFieldState extends State<AddingField> {
             height: 25,
           ),
           Row(
+            mainAxisAlignment:MainAxisAlignment.center,
             children: [
               appButton(
                 width: 150,
                 height: 50,
                 color: Colors.white,
-                text: "From",
+                text: "إلي",
                 onPressed: () {
                   showTimePicker(
                       context: context,
@@ -67,6 +64,10 @@ class _AddingFieldState extends State<AddingField> {
               ),
               SizedBox(width: 15,),
               appButton(
+                width: 150,
+                height: 50,
+                color: Colors.white,
+                text: "من",
                 onPressed: () {
                   showTimePicker(
                       context: context,
