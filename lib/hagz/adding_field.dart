@@ -17,6 +17,7 @@ class _AddingFieldState extends State<AddingField> {
   final TextEditingController place = TextEditingController();
   late String playersNum;
   late String location;
+  final TimeOfDay time=TimeOfDay.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,6 +106,8 @@ class _AddingFieldState extends State<AddingField> {
               ),
             ],
           ),
+          SizedBox(height: 25,),
+          Text(time.toString(),style: TextStyle(fontSize: 75),),
         ],
       ),
     );
