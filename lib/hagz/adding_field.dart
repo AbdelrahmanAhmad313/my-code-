@@ -78,21 +78,9 @@ class _AddingFieldState extends State<AddingField> {
               ),
             ],
           ),
-
         ],
       ),
     );
   }
 }
 
-TimeOfDay? selectedTime;
-
-Future<void> selectTime(BuildContext context) async {
-  final TimeOfDay? picked = await showTimePicker(
-    context: context,
-    initialTime: selectedTime ?? TimeOfDay.now(),
-  );
-  if (picked != null && picked != selectedTime) {
-    return;
-  }
-}
