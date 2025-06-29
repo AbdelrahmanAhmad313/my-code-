@@ -9,6 +9,7 @@ class appInput extends StatefulWidget {
   final Key? key;
   final bool isPassword;
   final TextDirection textDirection;
+  final TextEditingController controller;
   const appInput({
     this.keyboardtype = TextInputType.name,
     this.borderradius= const BorderRadius.all(Radius.circular(0)),
@@ -16,6 +17,7 @@ class appInput extends StatefulWidget {
     this.label,
      this.isPassword=false,
     this.textDirection=TextDirection.ltr,
+    required this.controller,
   }) :super(key: key);
 
   @override
@@ -32,7 +34,7 @@ class _appInputState extends State<appInput> {
         onTapOutside:(event) {
           FocusManager.instance.primaryFocus?.unfocus();
         },
-        key: widget.key,
+        controller: widget.controller,
         obscureText: isHidden&&widget.isPassword,
         keyboardType:widget.keyboardtype,
         decoration: InputDecoration(

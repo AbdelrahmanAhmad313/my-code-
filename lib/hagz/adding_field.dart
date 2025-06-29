@@ -13,7 +13,8 @@ class AddingField extends StatefulWidget {
 }
 
 class _AddingFieldState extends State<AddingField> {
-  final timeOfDay = const TimeOfDay(hour: 3, minute: 20);
+  late TextEditingController plNum;
+  late TextEditingController place;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class _AddingFieldState extends State<AddingField> {
             height: 25,
           ),
           appInput(
+            controller: plNum,
             label: "العدد المطلوب",
             textDirection: TextDirection.rtl,
             borderradius: BorderRadius.circular(25),
@@ -39,6 +41,7 @@ class _AddingFieldState extends State<AddingField> {
             height: 25,
           ),
           appInput(
+            controller: place,
             label: "المكان",
             textDirection: TextDirection.rtl,
             borderradius: BorderRadius.circular(25),
