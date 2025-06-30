@@ -15,8 +15,6 @@ class _AddingFieldState extends State<AddingField> {
   final TextEditingController place = TextEditingController();
   final TextEditingController timeFrom = TextEditingController();
   final TextEditingController timeTo = TextEditingController();
-  late TimeOfDay? selectedTimeFrom;
-  late TimeOfDay? selectedTimeTo;
   late int players;
   late String location;
   late TimeOfDay startTime,endTime;
@@ -35,8 +33,7 @@ class _AddingFieldState extends State<AddingField> {
             plNum.clear();
             location=place.text;
             place.clear();
-            startTime=selectedTimeFrom!;
-            endTime=selectedTimeTo!;
+            // startTime=int.tryParse(timeTo.text);
             timeTo.clear();
             timeFrom.clear();
           },
@@ -104,12 +101,12 @@ class _AddingFieldState extends State<AddingField> {
                       )
                     ),
                     onTap: () async {
-                      selectedTimeTo = await showTimePicker(
+                      final selectedTime = await showTimePicker(
                         context: context,
                         initialTime: TimeOfDay.now(),
                       );
-                      if (selectedTimeTo != null) {
-                        timeFrom.text = selectedTimeTo.toString();
+                      if (selectedTime != null) {
+                        timeFrom.text = selectedTime.format(context);
                       }
                     }
                   ),
@@ -139,12 +136,12 @@ class _AddingFieldState extends State<AddingField> {
                       )
                     ),
                     onTap: () async {
-                       selectedTimeFrom = await showTimePicker(
+                      final selectedTime = await showTimePicker(
                         context: context,
                         initialTime: TimeOfDay.now(),
                       );
-                      if (selectedTimeFrom != null) {
-                        timeTo.text = selectedTimeFrom.toString();
+                      if (selectedTime != null) {
+                        timeTo.text = selectedTime.format(context);
                       }
                     }
                   ),
