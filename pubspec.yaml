@@ -16,6 +16,7 @@ dependencies:
   equatable: ^2.0.7
   uuid: ^4.5.1
   basic_clocks: ^0.0.1
+  alarm: ^4.1.1
   cupertino_icons: ^1.0.6
 
 
