@@ -17,7 +17,10 @@ class _AddingFieldState extends State<AddingField> {
   final TextEditingController place = TextEditingController();
   late String playersNum;
   late String location;
-  final TimeOfDay time=TimeOfDay.now();
+   late TimeOfDay timeFrom ;
+   late TimeOfDay timeTo ;
+  TimeOfDay _selectedTime = TimeOfDay.now();
+  late TimeOfDay? pickedTime=TimeOfDay(hour: 12, minute: 00);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +32,12 @@ class _AddingFieldState extends State<AddingField> {
       persistentFooterButtons: [
         appButton(
           onPressed: () {
-            playersNum =plNum.toString();
+            playersNum = plNum.text;
             plNum.clear();
-            location=place.toString();
+            location = place.text;
             place.clear();
-            setState(() {});
+            // timeFrom=selectedFrom;
+            // setState(() {});
           },
           borderColor: Colors.white,
           text: "تمام",
@@ -43,7 +47,7 @@ class _AddingFieldState extends State<AddingField> {
           width: 450,
           height: 75,
           textColor: Colors.white,
-          color:isPadel?Colors.blue: Colors.green,
+          color: isPadel ? Colors.blue : Colors.green,
         ),
       ],
       body: Column(
@@ -73,7 +77,7 @@ class _AddingFieldState extends State<AddingField> {
             height: 35,
           ),
           Row(
-            mainAxisAlignment:MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               appButton(
                 width: 150,
@@ -81,15 +85,28 @@ class _AddingFieldState extends State<AddingField> {
                 color: Colors.green,
                 borderColor: Colors.white,
                 text: "إلي",
-                onPressed: () {
-                  showTimePicker(
-                      context: context,
-                      initialTime: TimeOfDay(hour: 12, minute: 0)
+                onPressed: ()async {
+                  TimeOfDay? picked = await showTimePicker(
+                    context: context,
+                    initialTime: timeTo,
                   );
+                  if (picked != null && picked != timeTo) {
+                    setState(() {
+                      timeTo = picked;
+                    });
+                  }
                 },
+                // {
+                //    TimeOfDay selectedFrom=  showTimePicker(
+                //       context: context,
+                //       initialTime: TimeOfDay(hour: 12, minute: 0)
+                //   ) as TimeOfDay;
+                // },
                 borderRadius: BorderRadius.circular(15),
               ),
-              SizedBox(width: 15,),
+              SizedBox(
+                width: 15,
+              ),
               appButton(
                 width: 150,
                 height: 50,
@@ -99,19 +116,21 @@ class _AddingFieldState extends State<AddingField> {
                 onPressed: () {
                   showTimePicker(
                       context: context,
-                      initialTime: TimeOfDay(hour: 12, minute: 0)
-                  );
+                      initialTime: TimeOfDay(hour: 12, minute: 0));
                 },
                 borderRadius: BorderRadius.circular(15),
               ),
             ],
           ),
-          SizedBox(height: 25,),
-          Text(time.toString(),style: TextStyle(fontSize: 75),),
+          SizedBox(
+            height: 25,
+          ),
+          // Text(
+          //   timeTo.format(context),
+          //   style: TextStyle(fontSize: 30),
+          // ),
         ],
       ),
     );
   }
-
 }
-
