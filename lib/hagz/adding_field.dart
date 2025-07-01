@@ -17,7 +17,6 @@ class _AddingFieldState extends State<AddingField> {
   final TextEditingController timeTo = TextEditingController();
   late int players;
   late String location;
-  late TimeOfDay startTime,endTime;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +28,12 @@ class _AddingFieldState extends State<AddingField> {
       persistentFooterButtons: [
         appButton(
           onPressed: () {
-            players=int.tryParse(plNum.text)!;
             plNum.clear();
-            location=place.text;
             place.clear();
-            // startTime=int.tryParse(timeTo.text);
             timeTo.clear();
             timeFrom.clear();
+            location=place.text;
+            players=int.tryParse(plNum.text)!;
           },
           borderColor: Colors.white,
           text: "تمام",
