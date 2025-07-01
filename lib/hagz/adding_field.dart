@@ -17,6 +17,7 @@ class _AddingFieldState extends State<AddingField> {
   final TextEditingController timeTo = TextEditingController();
   late int players;
   late String location;
+  List<Map<String, dynamic>> list=[{}];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +34,15 @@ class _AddingFieldState extends State<AddingField> {
             timeTo.clear();
             timeFrom.clear();
             location=place.text;
-            players=int.tryParse(plNum.text)!;
+            players=int.tryParse(plNum.text)??0;
+            list.add({
+            'players': players,
+            'location': location,
+            'startTime': timeFrom,
+            'endTime': timeTo,
+            }
+            );
+            print(list);
           },
           borderColor: Colors.white,
           text: "تمام",
