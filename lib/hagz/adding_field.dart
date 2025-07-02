@@ -18,7 +18,6 @@ class _AddingFieldState extends State<AddingField> {
   late int players;
   late String location;
   late String start,end;
-  List<Map<String, dynamic>> list=[{}];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,3 +165,4 @@ class _AddingFieldState extends State<AddingField> {
     );
   }
 }
+List<Map<String, dynamic>> list=[{}];
