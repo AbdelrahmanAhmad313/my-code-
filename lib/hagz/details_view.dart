@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/hagz/adding_field.dart';
 
 class DetailsView extends StatelessWidget {
   const DetailsView({super.key});
@@ -10,13 +11,13 @@ class DetailsView extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: 50,),
-          Text(""),
+          Text(list.first[1]),
           SizedBox(height: 50,),
-          Text(""),
+          Text(list.first[2]),
           SizedBox(height: 50,),
-          Text(""),
+          Text(list.first[3]),
           SizedBox(height: 50,),
-          Text(""),
+          Text(list.first[4]),
         ],
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/shortcuts/app_button.dart';
 import 'package:myapp/core/shortcuts/app_input.dart';
+import 'package:myapp/core/shortcuts/move_to.dart';
+import 'package:myapp/hagz/details_view.dart';
 import 'paddle/paddle_way.dart';
 
 class AddingField extends StatefulWidget {
@@ -29,14 +31,10 @@ class _AddingFieldState extends State<AddingField> {
       persistentFooterButtons: [
         appButton(
           onPressed: () {
-            plNum.clear();
-            place.clear();
-            timeTo.clear();
-            timeFrom.clear();
-            location=place.text;
+            location=place.text??"";
             players=int.tryParse(plNum.text)??0;
-            end =timeTo.text ;
-            start= timeFrom.text;
+            end =timeTo.text??"";
+            start= timeFrom.text??"";
             Map<String,dynamic> newmap = ({
               'players': players,
               'location': location,
@@ -45,6 +43,12 @@ class _AddingFieldState extends State<AddingField> {
             }
             );
             list.add(newmap);
+            setState(() {});
+            plNum.clear();
+            place.clear();
+            timeTo.clear();
+            timeFrom.clear();
+            // moveTo(DetailsView());
             print(list);
           },
           borderColor: Colors.white,
