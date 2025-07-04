@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/shortcuts/Images.dart';
 import 'package:myapp/core/shortcuts/move_to.dart';
+import 'package:myapp/hagz/adding_field.dart';
 import 'package:myapp/hagz/field_details.dart';
 import 'package:myapp/hagz/football/football_way.dart';
 
@@ -25,7 +26,6 @@ class PaddleWay extends StatelessWidget {
         itemBuilder: (context,index)=>GestureDetector(
           onTap: (){
             isPadel =true;
-            pagenum=index;
             moveTo(DetailsPage());
           },
           child: Container(
@@ -56,9 +56,9 @@ class PaddleWay extends StatelessWidget {
                   mainAxisAlignment:MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text("عدد الساعات:${paddleData[index]["time"]}"),
-                    Text("عدد مطلوب: ${paddleData[index]["pl"]}"),
-                    Text("مكان:${paddleData[index]["loc"]}"),
+                    Text("من:${list[0]["startTime"]}"),
+                    Text("عدد مطلوب: ${list[0]["players"]}"),
+                    Text("مكان:${list[0]["location"]}"),
                   ],
                 ),
               ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:myapp/core/shortcuts/Images.dart';
 import 'package:myapp/core/shortcuts/move_to.dart';
+import 'package:myapp/hagz/adding_field.dart';
 import 'package:myapp/hagz/paddle/paddle_way.dart';
 
 import '../field_details.dart';
@@ -25,7 +26,6 @@ class FootballWay extends StatelessWidget {
         itemBuilder: (context,index)=>GestureDetector(
           onTap: (){
             isPadel=false;
-            pagenum=index;
             moveTo(DetailsPage());
           },
           child: Container(
@@ -56,50 +56,19 @@ class FootballWay extends StatelessWidget {
                   mainAxisAlignment:MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text("عدد الساعات:${footData[index]["time"]}"),
-                    Text("عدد مطلوب: ${footData[index]["pl"]}"),
-                    Text("مكان:${footData[index]["loc"]}"),
+                    Text("من:${list[0]["startTime"]}"),
+                    Text("عدد مطلوب: ${list[0]["players"]}"),
+                    Text("مكان:${list[0]["location"]}"),
                   ],
                 ),
               ],
             ),
           ),
         ),
-        itemCount: footData.length,
+        itemCount: list.length,
       ),
     );
   }
 }
 
-late int pagenum;
-List<Map> footData=[{
-  "pageNo":1,
-  "loc":"مقطم",
-  "time":4,
-  "pl":3
-},
-  {
-    "pageNo":2,
-    "loc":"هرم",
-    "time":2,
-    "pl":4
-  },
-  {
-    "pageNo":3,
-    "loc":"تجمع الخامس",
-    "time":1,
-    "pl":1
-  },
-  {
-    "pageNo":4,
-    "loc":"مدينه نصر",
-    "time":3,
-    "pl":8
-  },
-  {
-    "pageNo":5,
-    "loc":"معادي",
-    "time":1,
-    "pl":9
-  },
-];
+
