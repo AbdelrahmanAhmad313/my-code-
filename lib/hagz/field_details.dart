@@ -42,9 +42,18 @@ class _DetailsPageState extends State<DetailsPage> {
             SizedBox(
               height: 25,
             ),
-            Text("من:${list[0]["startTime"]}"),
-            Text("عدد مطلوب: ${list[0]["players"]}"),
-            Text("مكان:${list[0]["location"]}"),
+            Padding(
+              padding: EdgeInsets.only(right: 15),
+              child: Column(
+                children: [
+                  Text("من:${list[0]["startTime"]}"),
+                  Text("إلى:${list[0]["endTime"]}"),
+                  Text("عدد مطلوب: ${list[0]["players"]}"),
+                  Text("مكان:${list[0]["location"]}"),
+                ],
+              ),
+            ),
+           
           ],
         ),
       ),

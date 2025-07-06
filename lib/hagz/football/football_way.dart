@@ -57,6 +57,7 @@ class FootballWay extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text("من:${list[0]["startTime"]}"),
+                    Text("إلى:${list[0]["endTime"]}"),
                     Text("عدد مطلوب: ${list[0]["players"]}"),
                     Text("مكان:${list[0]["location"]}"),
                   ],
