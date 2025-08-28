@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/controllers/bloc/counter_bloc.dart';
 import 'core/shortcuts/move_to.dart';
 
+import 'hagz/choice_page.dart';
 import 'hagz/field_details.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home: DetailsPage(),
+        home: ChoicePage(),
       ),
     );
   }

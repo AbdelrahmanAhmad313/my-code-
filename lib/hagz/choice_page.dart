@@ -43,7 +43,9 @@ class ChoicePage extends StatelessWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: Image.asset(
-                            'assets/images/football.jpg',
+                            // FIX: Corrected assets folder case from 'assets/images/' to 'assets/Images/' for Android's case-sensitive asset lookup
+                            // 'assets/images/football.jpg',
+                            'assets/Images/football.jpg',
                             alignment: Alignment.bottomLeft,
                           ),
                         ),
@@ -81,7 +83,9 @@ class ChoicePage extends StatelessWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: Image.asset(
-                            'assets/images/padel.jpg',
+                            // FIX: Corrected assets folder case from 'assets/images/' to 'assets/Images/' for Android's case-sensitive asset lookup
+                            // 'assets/images/padel.jpg',
+                            'assets/Images/padel.jpg',
                             alignment: Alignment.bottomLeft,
                           ),
                         ),
